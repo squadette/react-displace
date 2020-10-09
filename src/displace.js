@@ -3,9 +3,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-// React 16+ supports Portals.
-const canUsePortals = !!ReactDOM.createPortal;
-
 function displace(WrappedComponent, options) {
   if (!global.document) {
     return class EmptyDisplace extends React.Component {
@@ -38,26 +35,7 @@ function displace(WrappedComponent, options) {
       })();
     }
 
-    componentDidMount() {
-      if (canUsePortals) return;
-      if (this.props.mounted) {
-        this.renderDisplaced();
-      }
-    }
-
-    componentDidUpdate(prevProps) {
-      if (canUsePortals) return;
-      if (prevProps.mounted && !this.props.mounted) {
-        ReactDOM.unmountComponentAtNode(this.container);
-      } else if (this.props.mounted) {
-        this.renderDisplaced();
-      }
-    }
-
     componentWillUnmount() {
-      if (!canUsePortals) {
-        ReactDOM.unmountComponentAtNode(this.container);
-      }
       if (!options.renderTo) {
         this.container.parentNode.removeChild(this.container);
       }
@@ -76,7 +54,7 @@ function displace(WrappedComponent, options) {
     };
 
     render() {
-      if (!canUsePortals || this.props.mounted === false) {
+      if (this.props.mounted === false) {
         return null;
       }
       return ReactDOM.createPortal(
