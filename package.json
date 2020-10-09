@@ -1,5 +1,5 @@
 {
-  "name": "react-displace",
+  "name": "@squadette/react-displace",
   "version": "2.4.0-pre1",
   "description": "A higher order component that displaces your component into a remote region of the DOM",
   "main": "dist/displace.js",
