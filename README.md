@@ -1,4 +1,4 @@
-# react-displace [![Build Status](https://travis-ci.org/davidtheclark/react-displace.svg?branch=master)](https://travis-ci.org/davidtheclark/react-displace)
+# react-displace [![Build Status](https://travis-ci.org/squadette/react-displace.svg?branch=master)](https://travis-ci.org/squadette/react-displace)
 
 A higher-order component that displaces *your* component into a remote region of the DOM. When your component mounts, it renders to the end of `document.body` (or into any specified DOM node), instead of its expected place within the React component tree; but it still maintains its normal life cycle within the tree, mounting, updating, and unmounting as expected.
 
@@ -18,12 +18,7 @@ You'll need to be using a bundler like Browserify, Webpack, or Rollup.
 
 ### React Dependency
 
-Version 2.3+ uses React 16's [Portals](https://reactjs.org/docs/portals.html), if available.
-If not, it resorts to the old ways, so is still compatible with previous versions of React.
-
-Version 2+ is compatible with React >=0.14.x.
-
-Version 1+ is compatible with React 0.13.x.
+Version 2.4+ uses React 16's [Portals](https://reactjs.org/docs/portals.html).
 
 ## Tested Browser Support
 
