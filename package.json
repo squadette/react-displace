@@ -1,6 +1,6 @@
 {
   "name": "react-displace",
-  "version": "2.3.0",
+  "version": "2.4.0-pre1",
   "description": "A higher order component that displaces your component into a remote region of the DOM",
   "main": "dist/displace.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidtheclark/react-displace.git"
+    "url": "git+https://github.com/squadette/react-displace.git"
   },
   "keywords": [
     "react",
@@ -27,9 +27,9 @@
   "author": "David Clark",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/davidtheclark/react-displace/issues"
+    "url": "https://github.com/squadette/react-displace/issues"
   },
-  "homepage": "https://github.com/davidtheclark/react-displace#readme",
+  "homepage": "https://github.com/squadette/react-displace#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^8.0.1",
@@ -49,8 +49,8 @@
     "watchify": "^3.9.0"
   },
   "peerDependencies": {
-    "react": "0.14.x || ^15.0.0 || ^16.0.0",
-    "react-dom": "0.14.x || ^15.0.0 || ^16.0.0"
+    "react": "^16.0.0 || ^17.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0"
   },
   "prettier": {
     "singleQuote": true
