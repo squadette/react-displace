@@ -45,6 +45,9 @@ function displace(WrappedComponent, options) {
       if (this.props.mounted === false) {
         return null;
       }
+      if (!this.container) {
+        return null;
+      }
       return ReactDOM.createPortal(
         React.createElement(WrappedComponent, this.props, this.props.children),
         this.container
