@@ -21,6 +21,11 @@ function displace(WrappedComponent, options) {
 
     static WrappedComponent = WrappedComponent;
 
+    constructor(props) {
+      super(props);
+      this.state = { mounted: false };
+    }
+
     componentDidMount() {
       this.container = (() => {
         if (!options.renderTo) {
@@ -33,6 +38,7 @@ function displace(WrappedComponent, options) {
           return options.renderTo;
         }
       })();
+      this.setState({ mounted: true });
     }
 
     componentWillUnmount() {
@@ -43,6 +49,9 @@ function displace(WrappedComponent, options) {
 
     render() {
       if (this.props.mounted === false) {
+        return null;
+      }
+      if (!this.state.mounted) {
         return null;
       }
       if (!this.container) {
