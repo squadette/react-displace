@@ -21,7 +21,7 @@ function displace(WrappedComponent, options) {
 
     static WrappedComponent = WrappedComponent;
 
-    componentWillMount() {
+    componentDidMount() {
       this.container = (() => {
         if (!options.renderTo) {
           var result = document.createElement('div');
@@ -40,18 +40,6 @@ function displace(WrappedComponent, options) {
         this.container.parentNode.removeChild(this.container);
       }
     }
-
-    renderDisplaced = () => {
-      ReactDOM.unstable_renderSubtreeIntoContainer(
-        this,
-        React.createElement(WrappedComponent, this.props, this.props.children),
-        this.container
-      );
-    };
-
-    removeDisplaced = () => {
-      ReactDOM.unmountComponentAtNode(this.container);
-    };
 
     render() {
       if (this.props.mounted === false) {
